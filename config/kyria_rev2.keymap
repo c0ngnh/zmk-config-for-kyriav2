@@ -134,19 +134,19 @@
 
 		default_layer {
 /* -------------------------------------------------------------                                            -------------------------------------------------------------
-   |    ESC  |    Q    |    W    |    E    |    R    |    T    |                                            |    Y    |    U    |    I    |    O    |    P    |    \    |
+   |    ESC  |    Q    |    W    |    E    |    R    |    T    |                                            |    Y    |    U    |    I    |    O    |    P    |   BSCP  |
    |    TAB  |    A    |    S    |    D    |    F    |    G    |--------------------    --------------------|    H    |    J    |    K    |    L    |    ;    |    '    |
-   |    SHIFT|    Z    |    X    |    C    |    V    |    B    |    TAB  |    ESC  |    |    BSCP |   DEL   |    N    |    M    |    ,    |    .    |    /    |   CTRL  |
+   |    SHIFT|    Z    |    X    |    C    |    V    |    B    |    TAB  |    ESC  |    |    \    |   DEL   |    N    |    M    |    ,    |    .    |    /    |   CTRL  |
    ------------------------------|   CTRL  |   GUI   |   ALT   |   SPACE |    num  |    |    nav  |   RET   |   ALT   |   CTRL  |  rotary |------------------------------
                                  ---------------------------------------------------    ---------------------------------------------------                               */
 			bindings = <
-    &kp ESC   &kp Q     &kp W     &kp E     &kp R     &kp T                                                  &kp Y     &kp U     &kp I     &kp O     &kp P     &kp BSLH
+    &kp ESC   &kp Q     &kp W     &kp E     &kp R     &kp T                                                  &kp Y     &kp U     &kp I     &kp O     &kp P     &kp BSPC
     &kp TAB   &kp A     &kp S     &kp D     &kp F     &kp G                                                  &kp H     &kp J     &kp K     &kp L     &kp SEMI  &kp SQT
-    &kp LSHFT &kp Z     &kp X     &kp C     &kp V     &kp B     &mt LSHFT TAB &kp ESC    &kp BSPC  &mt RSHFT DEL &kp N &kp M     &kp COMMA &kp DOT   &kp FSLH  &kp RSHFT
+    &kp LSHFT &kp Z     &kp X     &kp C     &kp V     &kp B     &mt LSHFT TAB &kp ESC    &kp BSLH  &mt RSHFT DEL &kp N &kp M     &kp COMMA &kp DOT   &kp FSLH  &kp RSHFT
                                   &kp LGUI  &kp LCTRL &kp LALT  &lt NUM SPACE &mo_tog NAV NUM   &mo_tog NUM NAV &lt NAV RET &kp RALT &kp RCTRL &kp C_MUTE
 			>;
 
-			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN;
+			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp LR_DOWN LR_UP;
 		};
 
 		nav_layer {
