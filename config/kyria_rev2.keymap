@@ -156,7 +156,7 @@
     &trans    &none     &none     &none     &none     &none     &trans   &trans          &trans    &trans    &kp BEG_DOC &kp PREV_WORD &none &kp NEXT_WORD &kp END_DOC &none
                                   &trans    &trans    &trans    &lt FUN SPACE &kp RET    &trans    &trans    &trans    &trans    &trans
 			>;
-			sensor-bindings = <&inc_dec_kp LR_DOWN LR_UP &inc_dec_kp PG_UP PG_DN;
+			sensor-bindings = <&inc_dec_kp LR_DOWN LR_UP &inc_dec_kp PG_UP PG_DN>;
 		};
 
 		num_layer {
@@ -175,7 +175,7 @@
     &trans    &kp F13   &kp F14   &kp F15   &kp F16   &kp INS   &trans   &trans          &trans    &trans    &kp C_MUTE &kp F1   &kp F2    &kp F3    &kp F10   &kp C_NEXT
                                   &trans    &trans    &trans    &trans   &trans          &trans    &trans    &trans    &trans    &trans
 			>;
-			sensor-bindings = <&inc_dec_kp LS(TAB) TAB &inc_dec_kp PG_UP PG_DN;
+			sensor-bindings = <&inc_dec_kp LS(TAB) TAB &inc_dec_kp PG_UP PG_DN>;
 		};
 	};
 };
