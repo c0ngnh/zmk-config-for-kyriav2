@@ -156,7 +156,7 @@
     &trans    &none     &none     &none     &none     &none     &trans   &trans          &trans    &trans    &kp BEG_DOC &kp PREV_WORD &none &kp NEXT_WORD &kp END_DOC &none
                                   &trans    &trans    &trans    &lt FUN SPACE &kp RET    &trans    &trans    &trans    &trans    &trans
 			>;
-			sensor-bindings = <&inc_dec_kp LR_DOWN LR_UP &inc_dec_kp PG_UP PG_DN>;
+			sensor-bindings = <&inc_dec_kp K_SCROLL_DOWN K_SCROLL_UP &inc_dec_kp PG_UP PG_DN>;
 		};
 
 		num_layer {
@@ -166,6 +166,7 @@
     &trans    &kp TILDE &kp GRAVE &kp LT    &kp GT    &kp UNDER &trans   &trans          &trans    &trans    &kp MINUS &kp N1    &kp N2    &kp N3    &kp FSLH  &kp BSLH
                                   &trans    &trans    &trans    &trans   &trans          &kp SPACE &lt FUN RET &kp N0  &kp COMMA &trans
 			>;
+			sensor-bindings = <&inc_dec_kp LS(TAB) TAB &inc_dec_kp PG_UP PG_DN>;
 		};
 
 		fun_layer {
