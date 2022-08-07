@@ -146,7 +146,7 @@
                                   &kp LGUI  &kp LCTRL &kp LALT  &lt NUM SPACE &mo_tog NAV NUM   &mo_tog NUM NAV &lt NAV RET &kp RALT &kp RCTRL &kp C_MUTE
 			>;
 
-			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp LR_DOWN LR_UP;
+			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
 		};
 
 		nav_layer {
