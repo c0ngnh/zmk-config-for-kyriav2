@@ -152,8 +152,8 @@
 
 		nav_layer {
 			bindings = <
-    &rgb_ug RGB_TOG &rgb_ug RGB_BRI  &rgb_ug RGB_EFF  &none     &none     &none                                                  &none     &kp PG_UP &kp UP    &kp PG_DN &none     &none
-    &none &rgb_ug RGB_BRD     &rgb_ug RGB_EFR     &none     &none     &none                                                  &kp HOME  &kp LEFT  &kp DOWN  &kp RIGHT &kp END   &none
+    &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                              &none     &kp PG_UP &kp UP    &kp PG_DN &none     &none
+    &trans    &none     &none     &none     &none     &none                                                  &kp HOME  &kp LEFT  &kp DOWN  &kp RIGHT &kp END   &none
     &trans    &none     &none     &none     &none     &none     &trans   &trans          &trans    &trans    &kp BEG_DOC &kp PREV_WORD &none &kp NEXT_WORD &kp END_DOC &none
                                   &trans    &trans    &trans    &lt FUN SPACE &kp RET    &trans    &trans    &trans    &trans    &trans
 			>;
