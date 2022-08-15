@@ -72,6 +72,7 @@ jobs:
         working-directory: ./zephyr
         run: |
           pwd
+          ls -d */
           wget -O /drivers/led/led_pwm.c https://raw.githubusercontent.com/infused-kim/zmk-zephyr/f2108f1646b964adffb9c7ed74641c828fef2a44/drivers/led/led_pwm.c
           wget -O /drivers/led/CMakeLists.tx thttps://raw.githubusercontent.com/infused-kim/zmk-zephyr/2925777baa3b785c236946ca3550d840661487a2/drivers/led/CMakeLists.txt
           wget -O /drivers/led/Kconfig https://raw.githubusercontent.com/infused-kim/zmk-zephyr/2925777baa3b785c236946ca3550d840661487a2/drivers/led/Kconfig
