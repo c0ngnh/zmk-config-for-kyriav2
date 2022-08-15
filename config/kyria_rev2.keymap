@@ -155,7 +155,7 @@
     &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                              &none     &kp PG_UP &kp UP    &kp PG_DN &none     &none
     &rgb_ug RGB_TOG    &rgb_ug RGB_BRI     &rgb_ug RGB_BRD     &none     &none     &none                                                  &kp HOME  &kp LEFT  &kp DOWN  &kp RIGHT &kp END   &none
     &rgb_ug RGB_EFF    &rgb_ug RGB_EFR    &rgb_ug RGB_COLOR_HSB(39,100,100)     &none     &none     &none     &trans   &trans          &trans    &trans    &kp BEG_DOC &kp PREV_WORD &none &kp NEXT_WORD &kp END_DOC &none
-                                  &trans    &trans    &trans    &lt FUN SPACE &kp RET    &trans    &trans    &trans    &trans    &out OUT_TOG
+                                  &trans    &trans    &trans    &lt FUN SPACE &kp RET    &trans    &trans    &trans    &trans    &trans
 			>;
 			sensor-bindings = <&inc_dec_kp K_SCROLL_DOWN K_SCROLL_UP &inc_dec_kp PG_UP PG_DN>;
 		};
