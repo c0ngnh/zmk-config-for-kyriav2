@@ -73,7 +73,7 @@ jobs:
         run: |
           pwd
           wget -O /__w/zmk-config-for-kyriav2/zmk-config-for-kyriav2/zephyr/drivers/led/led_pwm.c https://raw.githubusercontent.com/infused-kim/zmk-zephyr/f2108f1646b964adffb9c7ed74641c828fef2a44/drivers/led/led_pwm.c
-          wget -O /__w/zmk-config-for-kyriav2/zmk-config-for-kyriav2/zephyr/drivers/led/CMakeLists.tx thttps://raw.githubusercontent.com/infused-kim/zmk-zephyr/2925777baa3b785c236946ca3550d840661487a2/drivers/led/CMakeLists.txt
+          wget -O /__w/zmk-config-for-kyriav2/zmk-config-for-kyriav2/zephyr/drivers/led/CMakeLists.txt https://raw.githubusercontent.com/infused-kim/zmk-zephyr/2925777baa3b785c236946ca3550d840661487a2/drivers/led/CMakeLists.txt
           wget -O /__w/zmk-config-for-kyriav2/zmk-config-for-kyriav2/zephyr/drivers/led/Kconfig https://raw.githubusercontent.com/infused-kim/zmk-zephyr/2925777baa3b785c236946ca3550d840661487a2/drivers/led/Kconfig
           wget -O /__w/zmk-config-for-kyriav2/zmk-config-for-kyriav2/zephyr/drivers/led/Kconfig.gpio https://raw.githubusercontent.com/infused-kim/zmk-zephyr/2925777baa3b785c236946ca3550d840661487a2/drivers/led/Kconfig.gpio
           wget -O /__w/zmk-config-for-kyriav2/zmk-config-for-kyriav2/zephyr/drivers/led/led_gpio.c https://raw.githubusercontent.com/infused-kim/zmk-zephyr/2925777baa3b785c236946ca3550d840661487a2/drivers/led/led_gpio.c
