@@ -70,7 +70,6 @@ jobs:
         run: west zephyr-export
       - name: West Build (${{ steps.variables.outputs.display-name }})
         run: |
-          mv /__w/zmk-config-for-kyriav2/zmk-config-for-kyriav2/ext_power_generic.c /__w/zmk-config-for-kyriav2/zmk-config-for-kyriav2/zmk/app/src/ext_power_generic.c
           west build -s zmk/app -b ${{ matrix.board }} -- -DZMK_CONFIG=${GITHUB_WORKSPACE}/config ${{ steps.variables.outputs.extra-cmake-args }} ${{ matrix.cmake-args }}
       - name: ${{ steps.variables.outputs.display-name }} Kconfig file
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
