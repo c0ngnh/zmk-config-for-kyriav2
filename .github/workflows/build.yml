@@ -22,7 +22,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: zmkfirmware/zmk-build-arm:stable
+      image: zmkfirmware/zmk-dev-arm:2.5
     needs: matrix
     name: Build
     strategy:
@@ -68,9 +68,19 @@ jobs:
         run: west update
       - name: West Zephyr export
         run: west zephyr-export
+      - name: Patch Zephyr OLED
+        working-directory: ./zephyr
+        run: |
+          wget https://github.com/zmkfirmware/zmk/files/8009722/zephyr_oled_i2c_fix_full_init.diff.txt
+          git apply zephyr_oled_i2c_fix_full_init.diff.txt
       - name: West Build (${{ steps.variables.outputs.display-name }})
         run: |
           west build -s zmk/app -b ${{ matrix.board }} -- -DZMK_CONFIG=${GITHUB_WORKSPACE}/config ${{ steps.variables.outputs.extra-cmake-args }} ${{ matrix.cmake-args }}
+      - name: ${{ steps.variables.outputs.display-name }} DTS File
+        if: ${{ always() }}
+        run: |
+          if [ -f "build/zephyr/${{ matrix.board }}.dts.pre.tmp" ]; then cat -n build/zephyr/${{ matrix.board }}.dts.pre.tmp; fi
+          if [ -f "build/zephyr/zephyr.dts" ]; then cat -n build/zephyr/zephyr.dts; fi
       - name: ${{ steps.variables.outputs.display-name }} Kconfig file
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
       - name: Rename artifacts
