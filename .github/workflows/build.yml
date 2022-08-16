@@ -70,6 +70,7 @@ jobs:
         run: west zephyr-export
       - name: West Build (${{ steps.variables.outputs.display-name }})
         run: |
+          apt-get install wget -y
           wget -O /__w/zmk-config-for-kyriav2/zmk-config-for-kyriav2/zmk/app/src/ext_power_generic.c https://raw.githubusercontent.com/zmkfirmware/zmk/main/app/src/ext_power_generic.c
           west build -s zmk/app -b ${{ matrix.board }} -- -DZMK_CONFIG=${GITHUB_WORKSPACE}/config ${{ steps.variables.outputs.extra-cmake-args }} ${{ matrix.cmake-args }}
       - name: ${{ steps.variables.outputs.display-name }} DTS File
