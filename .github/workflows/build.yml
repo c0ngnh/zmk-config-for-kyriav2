@@ -13,8 +13,6 @@ jobs:
         uses: actions/checkout@v2
       - name: Install yaml2json
         run: python3 -m pip install remarshal
-      - name: Install wget
-        run: python3 -m pip install wget
       - id: set-matrix
         name: Fetch Build Matrix
         run: |
@@ -72,7 +70,7 @@ jobs:
         run: west zephyr-export
       - name: West Build (${{ steps.variables.outputs.display-name }})
         run: |
-          curl -O /__w/zmk-config-for-kyriav2/zmk-config-for-kyriav2/zmk/app/src/ext_power_generic.c https://raw.githubusercontent.com/zmkfirmware/zmk/main/app/src/ext_power_generic.c
+          mv /__w/zmk-config-for-kyriav2/zmk-config-for-kyriav2/ext_power_generic.c /__w/zmk-config-for-kyriav2/zmk-config-for-kyriav2/zmk/app/src/ext_power_generic.c 
           west build -s zmk/app -b ${{ matrix.board }} -- -DZMK_CONFIG=${GITHUB_WORKSPACE}/config ${{ steps.variables.outputs.extra-cmake-args }} ${{ matrix.cmake-args }}
       - name: ${{ steps.variables.outputs.display-name }} DTS File
         if: ${{ always() }}
