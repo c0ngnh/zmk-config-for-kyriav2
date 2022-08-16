@@ -20,6 +20,9 @@
 #define BEG_DOC   LC(HOME)
 #define END_DOC   LC(END)
 
+&left_encoder { resolution = <2>; };
+&right_encoder { resolution = <2>; };
+
 /*                            KEY POSITIONS
   ╭────────────────────────╮                 ╭────────────────────────╮
   │  0   1   2   3   4   5 │                 │  6   7   8   9  10  11 │
@@ -146,7 +149,7 @@
     &kp LSHFT &kp Z     &kp X     &kp C     &kp V     &kp B     &mt LSHFT TAB &kp ESC    &kp BSLH  &mt RSHFT DEL &kp N &kp M     &kp COMMA &kp DOT   &kp FSLH  &kp RSHFT
                                   &kp LGUI  &kp LCTRL &kp LALT  &lt NUM SPACE &mo_tog NAV NUM   &mo_tog NUM NAV &lt NAV RET &kp RALT &kp RCTRL &kp C_MUTE
 			>;
-			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_BRI_DN C_BRI_UP>;
+			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp DOWN UP>;
 		};
 
 		nav_layer {
@@ -156,7 +159,7 @@
     &none      &none   &none      &none     &none     &none     &trans   &trans          &trans    &trans    &kp BEG_DOC &kp PREV_WORD &none &kp NEXT_WORD &kp END_DOC &none
                                   &trans    &trans    &trans    &lt FUN SPACE &kp RET    &trans    &trans    &trans    &trans    &trans
 			>;
-			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_BRI_DN C_BRI_UP>;
+			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp LS(TAB) TAB>;
 		};
 
 		num_layer {
