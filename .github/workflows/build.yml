@@ -68,6 +68,13 @@ jobs:
         run: west update
       - name: West Zephyr export
         run: west zephyr-export
+      - name: Patch encoder slave side
+        run: |
+          mv /__w/zmk-config-for-kyriav2/zmk-config-for-kyriav2/service.h /__w/zmk-config-for-kyriav2/zmk-config-for-kyriav2/zmk/app/include/zmk/split/bluetooth/service.h
+          mv /__w/zmk-config-for-kyriav2/zmk-config-for-kyriav2/uuid.h /__w/zmk-config-for-kyriav2/zmk-config-for-kyriav2/zmk/app/include/zmk/split/bluetooth/uuid.h
+          mv /__w/zmk-config-for-kyriav2/zmk-config-for-kyriav2/central.c /__w/zmk-config-for-kyriav2/zmk-config-for-kyriav2/zmk/app/src/split/bluetooth/central.c
+          mv /__w/zmk-config-for-kyriav2/zmk-config-for-kyriav2/service.c /__w/zmk-config-for-kyriav2/zmk-config-for-kyriav2/zmk/app/src/split/bluetooth/service.c
+          mv /__w/zmk-config-for-kyriav2/zmk-config-for-kyriav2/split_listener.c /__w/zmk-config-for-kyriav2/zmk-config-for-kyriav2/zmk/app/src/split_listener.c
       - name: West Build (${{ steps.variables.outputs.display-name }})
         run: |
           west build -s zmk/app -b ${{ matrix.board }} -- -DZMK_CONFIG=${GITHUB_WORKSPACE}/config ${{ steps.variables.outputs.extra-cmake-args }} ${{ matrix.cmake-args }}
