@@ -160,7 +160,7 @@
     &none      &none   &none      &none     &none     &none     &trans   &trans          &trans    &trans    &kp BEG_DOC &kp PREV_WORD &none &kp NEXT_WORD &kp END_DOC &none
                                   &trans    &trans    &trans    &lt FUN SPACE &kp RET    &trans    &trans    &trans    &trans    &trans
 			>;
-			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp LS(TAB) TAB>;
+			sensor-bindings = <&inc_dec_kp LS(TAB) TAB &inc_dec_kp C_VOL_DN C_VOL_UP>;
 		};
 
 		num_layer {
@@ -170,7 +170,7 @@
     &trans    &kp TILDE &kp GRAVE &kp LT    &kp GT    &kp UNDER &trans   &trans          &trans    &trans    &kp MINUS &kp N1    &kp N2    &kp N3    &kp FSLH  &kp BSLH
                                   &trans    &trans    &trans    &trans   &trans          &kp SPACE &lt FUN RET &kp N0  &kp COMMA &trans
 			>;
-			sensor-bindings = <&inc_dec_kp LS(TAB) TAB &inc_dec_kp PG_UP PG_DN>;
+			sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp PG_UP PG_DN>;
 		};
 
 		fun_layer {
@@ -180,7 +180,7 @@
     &trans    &kp F13   &kp F14   &kp F15   &kp F16   &kp INS   &trans   &trans          &trans    &trans    &kp C_MUTE &kp F1   &kp F2    &kp F3    &kp F10   &kp C_NEXT
                                   &trans    &trans    &trans    &trans   &trans          &trans    &trans    &trans    &trans    &trans
 			>;
-			sensor-bindings = <&inc_dec_kp LS(TAB) TAB &inc_dec_kp PG_UP PG_DN>;
+			sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp LS(TAB) TAB>;
 		};
 	};
 };
