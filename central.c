@@ -148,50 +148,6 @@ void peripheral_event_work_callback(struct k_work *work) {
 
 K_WORK_DEFINE(peripheral_event_work, peripheral_event_work_callback);
 
-#if ZMK_KEYMAP_HAS_SENSORS
-K_MSGQ_DEFINE(peripheral_sensor_event_msgq, sizeof(struct zmk_sensor_event),
-              CONFIG_ZMK_SPLIT_BLE_CENTRAL_POSITION_QUEUE_SIZE, 4);
-
-void peripheral_sensor_event_work_callback(struct k_work *work) {
-    struct zmk_sensor_event ev;
-    while (k_msgq_get(&peripheral_sensor_event_msgq, &ev, K_NO_WAIT) == 0) {
-        LOG_DBG("Trigger sensor change for %d", ev.sensor_number);
-        ZMK_EVENT_RAISE(new_zmk_sensor_event(ev));
-    }
-}
-
-K_WORK_DEFINE(peripheral_sensor_event_work, peripheral_sensor_event_work_callback);
-
-struct sensor_event {
-    uint8_t sensor_number;
-    struct sensor_value value;
-};
-
-static uint8_t split_central_sensor_notify_func(struct bt_conn *conn,
-                                                struct bt_gatt_subscribe_params *params,
-                                                const void *data, uint16_t length) {
-
-    const struct sensor_event *sensor_event = data;
-
-    if (!data) {
-        LOG_DBG("[UNSUBSCRIBED]");
-        params->value_handle = 0U;
-        return BT_GATT_ITER_STOP;
-    }
-    LOG_DBG("[SENSOR NOTIFICATION] data %p length %u", data, length);
-
-    struct zmk_sensor_event ev = {
-        .sensor_number = sensor_event->sensor_number,
-        .value = {.val1 = (sensor_event->value).val1, .val2 = (sensor_event->value).val2},
-        .timestamp = k_uptime_get()};
-
-    k_msgq_put(&peripheral_sensor_event_msgq, &ev, K_NO_WAIT);
-    k_work_submit(&peripheral_sensor_event_work);
-
-    return BT_GATT_ITER_CONTINUE;
-}
-#endif /* ZMK_KEYMAP_HAS_SENSORS */
-
 static uint8_t split_central_notify_func(struct bt_conn *conn,
                                          struct bt_gatt_subscribe_params *params, const void *data,
                                          uint16_t length) {
