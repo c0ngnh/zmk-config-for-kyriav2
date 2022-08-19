@@ -141,14 +141,14 @@
 /* -------------------------------------------------------------                                            -------------------------------------------------------------
    |    ESC  |    Q    |    W    |    E    |    R    |    T    |                                            |    Y    |    U    |    I    |    O    |    P    |   BSCP  |
    |    TAB  |    A    |    S    |    D    |    F    |    G    |--------------------    --------------------|    H    |    J    |    K    |    L    |    ;    |    '    |
-   |    SHIFT|    Z    |    X    |    C    |    V    |    B    |    TAB  |    ESC  |    |    \    |   DEL   |    N    |    M    |    ,    |    .    |    /    |   CTRL  |
-   ------------------------------|   LGUI  |  LCTRL  |   ALT   |   SPACE |    num  |    |    nav  |   RET   |   ALT   |   CTRL  |  rotary |------------------------------
+   |    SHIFT|    Z    |    X    |    C    |    V    |    B    |   CAPS  |    ESC  |    |    \    |   DEL   |    N    |    M    |    ,    |    .    |    /    |   CTRL  |
+   ------------------------------|   MUTE  |  LCTRL  |   ALT   |   SPACE |    num  |    |    nav  |   RET   |   LEFT  |  RIGHT  |  RGUI   |------------------------------
                                  ---------------------------------------------------    ---------------------------------------------------                               */
 			bindings = <
     &kp ESC   &kp Q     &kp W     &kp E     &kp R     &kp T                                                  &kp Y     &kp U     &kp I     &kp O     &kp P     &kp BSPC
     &kp TAB   &kp A     &kp S     &kp D     &kp F     &kp G                                                  &kp H     &kp J     &kp K     &kp L     &kp SEMI  &kp SQT
-    &kp LSHFT &kp Z     &kp X     &kp C     &kp V     &kp B     &mt LSHFT TAB &kp ESC    &kp BSLH  &mt RSHFT DEL &kp N &kp M     &kp COMMA &kp DOT   &kp FSLH  &kp RSHFT
-                                  &kp LGUI  &kp LCTRL &kp LALT  &lt NUM SPACE &mo_tog NAV NUM   &mo_tog NUM NAV &lt NAV RET &kp RALT &kp RCTRL &kp C_MUTE
+    &kp LSHFT &kp Z     &kp X     &kp C     &kp V     &kp B     &mt LSHFT CAPS &kp ESC    &kp BSLH  &mt RSHFT DEL &kp N &kp M     &kp COMMA &kp DOT   &kp FSLH  &kp RSHFT
+                                  &kp C_MUTE  &kp LCTRL &kp LALT  &lt NUM SPACE &mo_tog NAV NUM   &mo_tog NUM NAV &lt NAV RET &kp LEFT &kp RIGHT &kp RGUI
 			>;
 			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp DOWN UP>;
 		};
@@ -156,7 +156,7 @@
 		nav_layer {
 			bindings = <
     &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                              &none     &kp PG_UP &kp UP    &kp PG_DN &none     &none
-    &rgb_ug RGB_TOG     &rgb_ug RGB_EFF    &rgb_ug RGB_EFR     &none     &none     &none                                                 &kp HOME  &kp LEFT  &kp DOWN  &kp RIGHT &kp END   &none
+    &rgb_ug RGB_TOG     &rgb_ug RGB_EFF    &rgb_ug RGB_EFR     &rgb_ug RGB_BRD     &rgb_ug RGB_BRI     &none                                                 &kp HOME  &kp LEFT  &kp DOWN  &kp RIGHT &kp END   &none
     &none      &none   &none      &none     &none     &none     &trans   &trans          &trans    &trans    &kp BEG_DOC &kp PREV_WORD &none &kp NEXT_WORD &kp END_DOC &none
                                   &trans    &trans    &trans    &lt FUN SPACE &kp RET    &trans    &trans    &trans    &trans    &trans
 			>;
