@@ -70,6 +70,16 @@ jobs:
         run: west zephyr-export
       - name: West Build (${{ steps.variables.outputs.display-name }})
         run: |
+          mv /__w/zmk-config-for-kyriav2/zmk-config-for-kyriav2/behavior.h /__w/zmk-config-for-kyriav2/zmk-config-for-kyriav2/zmk/behavior.h
+          mv /__w/zmk-config-for-kyriav2/zmk-config-for-kyriav2/behavior_sensor_rotate_key_press.c /__w/zmk-config-for-kyriav2/zmk-config-for-kyriav2/zmk/behavior_sensor_rotate_key_press.c
+          mv /__w/zmk-config-for-kyriav2/zmk-config-for-kyriav2/central.c /__w/zmk-config-for-kyriav2/zmk-config-for-kyriav2/zmk/central.c
+          mv /__w/zmk-config-for-kyriav2/zmk-config-for-kyriav2/keymap.c /__w/zmk-config-for-kyriav2/zmk-config-for-kyriav2/zmk/keymap.c
+          mv /__w/zmk-config-for-kyriav2/zmk-config-for-kyriav2/sensor_event.h /__w/zmk-config-for-kyriav2/zmk-config-for-kyriav2/zmk/sensor_event.h
+          mv /__w/zmk-config-for-kyriav2/zmk-config-for-kyriav2/sensors.c /__w/zmk-config-for-kyriav2/zmk-config-for-kyriav2/zmk/sensors.c
+          mv /__w/zmk-config-for-kyriav2/zmk-config-for-kyriav2/service.c /__w/zmk-config-for-kyriav2/zmk-config-for-kyriav2/zmk/service.c
+          mv /__w/zmk-config-for-kyriav2/zmk-config-for-kyriav2/service.h /__w/zmk-config-for-kyriav2/zmk-config-for-kyriav2/zmk/service.h
+          mv /__w/zmk-config-for-kyriav2/zmk-config-for-kyriav2/split_listener.c /__w/zmk-config-for-kyriav2/zmk-config-for-kyriav2/zmk/split_listener.c
+          mv /__w/zmk-config-for-kyriav2/zmk-config-for-kyriav2/uuid.h /__w/zmk-config-for-kyriav2/zmk-config-for-kyriav2/zmk/uuid.h
           west build -s zmk/app -b ${{ matrix.board }} -- -DZMK_CONFIG=${GITHUB_WORKSPACE}/config ${{ steps.variables.outputs.extra-cmake-args }} ${{ matrix.cmake-args }}
       - name: ${{ steps.variables.outputs.display-name }} Kconfig file
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
