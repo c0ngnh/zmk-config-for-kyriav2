@@ -141,14 +141,14 @@
 /* -------------------------------------------------------------                                            -------------------------------------------------------------
    |    ESC  |    Q    |    W    |    E    |    R    |    T    |                                            |    Y    |    U    |    I    |    O    |    P    |   BSCP  |
    |    TAB  |    A    |    S    |    D    |    F    |    G    |--------------------    --------------------|    H    |    J    |    K    |    L    |    ;    |    '    |
-   |    SHIFT|    Z    |    X    |    C    |    V    |    B    |   CAPS  |    ESC  |    |    \    |   DEL   |    N    |    M    |    ,    |    .    |    /    |   CTRL  |
-   ------------------------------|   MUTE  |  LCTRL  |   ALT   |   SPACE |    num  |    |    nav  |   RET   |   LEFT  |  RIGHT  |  RGUI   |------------------------------
+   |    SHIFT|    Z    |    X    |    C    |    V    |    B    |   CAPS  |   COLON |    |    \    |   DEL   |    N    |    M    |    ,    |    .    |    /    |   RGUI  |
+   ------------------------------|   MUTE  |  LCTRL  |   ALT   |   SPACE |    num  |    |    nav  |   RET   |   LEFT  |  RIGHT  |  C_MUTE |------------------------------
                                  ---------------------------------------------------    ---------------------------------------------------                               */
 			bindings = <
     &kp ESC   &kp Q     &kp W     &kp E     &kp R     &kp T                                                  &kp Y     &kp U     &kp I     &kp O     &kp P     &kp BSPC
     &kp TAB   &kp A     &kp S     &kp D     &kp F     &kp G                                                  &kp H     &kp J     &kp K     &kp L     &kp SEMI  &kp SQT
-    &kp LSHFT &kp Z     &kp X     &kp C     &kp V     &kp B     &mt LSHFT CAPS &kp ESC    &kp BSLH  &mt RSHFT DEL &kp N &kp M     &kp COMMA &kp DOT   &kp FSLH  &kp RSHFT
-                                  &kp C_MUTE  &kp LCTRL &kp LALT  &lt NUM SPACE &mo_tog NAV NUM   &mo_tog NUM NAV &lt NAV RET &kp LEFT &kp RIGHT &kp RGUI
+    &kp LSHFT &kp Z     &kp X     &kp C     &kp V     &kp B     &mt LSHFT CAPS &kp COLON    &kp BSLH  &mt RSHFT DEL &kp N &kp M     &kp COMMA &kp DOT   &kp FSLH  &kp RGUI
+                                  &kp C_MUTE  &kp LCTRL &kp LALT  &lt NUM SPACE &mo_tog NAV NUM   &mo_tog NUM NAV &lt NAV RET &kp LEFT &kp RIGHT &kp C_MUTE
 			>;
 			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp DOWN UP>;
 		};
